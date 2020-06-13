@@ -11,14 +11,15 @@
         <div class="navbar-nav">
             <a class="nav-item nav-link active" href="{% url 'account:dashboard' %}">Home</a>
             <a class="nav-item nav-link active" href="{% url 'blog:post_list' %}">Blog</a>
-            <a class="nav-item nav-link active" href="#">Registration</a>
+            <a class="nav-item nav-link active" href="{% url 'jurnal:reference_list' %}">References</a>
         </div>
     </div>
 </nav>
 {% if request.user.is_authenticated %}
-<ul class="nav justify-content-end">
+<ul class=" nav justify-content-end">
     <li class="nav-item">
-        <a class="nav-link active" href="{% url 'account:profile_update' %}">Hallo, {{ request.user.username }}
+        <a class="nav-link active" href="{% url 'account:profile_update' %}">Hallo,
+            {{ request.user.username }}
 
             {% if request.user.profile.photo %}
             <img src="{{ request.user.profile.photo.url }}" alt="" height="25 em">

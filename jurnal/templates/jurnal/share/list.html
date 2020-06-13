@@ -1,0 +1,26 @@
+{% extends 'jurnal/base.html' %}
+
+{% block title %}Reference of My Blog{% endblock title %}
+
+
+{% block content %}
+<h1>Reference of My Blog</h1>
+
+{% for reference in references %}
+<h2>
+    <a href="{{ reference.get_absolute_url }}">
+        {{ reference.title }}
+    </a>
+</h2>
+<p class="date">
+    Published {{ reference.publish }} by {{ reference.author }}
+</p>
+{{ reference.description|truncatewords:30|linebreaks }}
+<p>
+    {{ reference.link|truncatewords:30|linebreaks }}
+</p>
+<a href="{% url 'jurnal:reference_update' reference.id %}">Update Reference</a> |
+<a href="{% url 'jurnal:reference_delete' reference.id %}">Delete Reference</a>
+{% endfor %}
+{% include 'pagination.html' with page=references %}
+{% endblock content %}

@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 SITE_ID=1
 
 INSTALLED_APPS = [
+    'jurnal.apps.JurnalConfig',
     'account.apps.AccountConfig',
     'blog.apps.BlogConfig',
     'django.contrib.admin',
