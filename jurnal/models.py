@@ -25,7 +25,7 @@ class Reference(models.Model):
                         args=[self.publish.year,
                                 self.publish.month,
                                 self.publish.day,
-                                self.title])
+                                self.slug])
 
     # def get_absolute_url(self):
     #     return reverse('jurnal:reference_detail', args=[self.slug])
