@@ -15,9 +15,9 @@
 <p class="date">
     Published {{ reference.publish }} by {{ reference.author }}
 </p>
-{{ reference.description|truncatewords:30|linebreaks }}
+{{ reference.description }}
 <p>
-    {{ reference.link|truncatewords:30|linebreaks }}
+    <a href="{{reference.link}}">{{ reference.link }}</a>
 </p>
 <a href="{% url 'jurnal:reference_update' reference.id %}">Update Reference</a> |
 <a href="{% url 'jurnal:reference_delete' reference.id %}">Delete Reference</a>
